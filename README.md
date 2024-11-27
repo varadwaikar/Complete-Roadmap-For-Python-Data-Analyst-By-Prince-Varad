@@ -1,5 +1,6 @@
 # Complete-Roadmap-For-Python-Data-Analyst-By-Prince-Varad
-In this roadmap, I will guide you the every steps for to become a good successful python data analyst or python developer or sql developer. My agenda behind this repository is to remove every fear regarding to code,programming platforms like anaconda, vs code, power bi etc. I made this note with the help of w3school.com and youtube also. In this roadmap I will guide you step by step. Please follow me!! If I am taking any kinds of mistake.So, please correct me. Because my aim to gain my confidence not only my confidence but also my viewers confidence.  
+In this roadmap, I will guide you the every steps for to become a good successful python data analyst or python developer or sql developer. My agenda behind this repository is to remove every fear regarding to code,programming platforms like anaconda, vs code, power bi etc. I made this note with the help of w3school.com and youtube also. In this roadmap I will guide you step by step. Please follow me!! If I am taking any kinds of mistake.So, please correct me. Because my aim to gain my confidence not only my confidence but also my viewers confidence. 
+Tip :- When you are following my code.So, might you got the error like space indentation.So, don't be hesistate. Just follow the syntax as well as rules of your python code editor. Okay!!
 Thanks a lot!!!
 
 First Step :- Install the anaconda navigator in your PC. 
