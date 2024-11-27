@@ -1,1 +1,236 @@
+*List :- Lists are used to store multiple items in a single variable.
+         It is a collection which is ordered and changeable. Allows duplicate members.
+
+Q1. l = [10, "A", 'India', 10.6]
+print(l)    O/P:-[10, 'A', 'India', 10.6]
+print(l[3])  O/P:-10.6
+l[0] = 700
+print(l)     O/P:- [700, 'A', 'India', 10.6]
+
+*Negative Indexing in python :-
+#    -4  -3     -2      -1
+l = [10, "A", 'India', 10.6]
+#    0    1     2       3
+
+print(l)   O/P:-10 
+ * List Slicing :- 
+Q1.  l = [11,22,33,10,24,44,36,68,99,81,100]
+#    0  1  2  3  4  5  6  7  8  9  10
+
+print(l)
+print(type(l))
+
+O/P:_ [11, 22, 33, 10, 24, 44, 36, 68, 99, 81, 100]
+      <class 'list'>
+print(l[1:7])     O/P:-[22, 33, 10, 24, 44, 36]
+
+*List functions
+l = [10,20,30,40,50]
+
+print(len(l))    O/P:-5
+print(max(l))    O/P:-50
+print(sum(l))    O/P:-150
+
+*List methods:-
+ l = [10,20,30]
+l.append(40)
+print(l)    O/P:- [10, 20, 30, 40]
+print(l.index('India'))  O/P:-4
+
+*STRINGS IN PYTHON :- It is a sequence of characters in python. Strings in python are surrounded by either single quotation marks, or double quotation marks.
+'hello' is the same as "hello".
+You can display a string literal with the print() function:
+
+Q1.  #       -1
+s = 'hello'
+#    01234
+print(s)   O/P:-hello
+print(s[4])  O/P:-o
+print(s[-1])   O/P:-o
+print(type(s))  O/P:- <class 'str'>
+
+*Slicing in string :-
+s = 'communication'
+#    0123456789
+print(s[0:5])   O/P:- commu
+print(s[1:4])   O/P:-omm
+
+*String functions:- 
+s = 'communication'
+print(len(s))    o/p:-13
+print(max(s))    o/p:-m
+print(min(s))    o/p:-u
+
+*string methods:-
+s = 'RAJ123'
+print(s.casefold())  O/P:-raj123
+s = 'India'
+print(s.upper())  O/P:-INDIA
+print(s.lower())  O/P:-india
+# split:- to separte the string as well as line.
+
+Q. s = "This is an apple"
+   print(s.split(" "))
+O/P:-['This', 'is', 'an', 'apple']
+
+Q. l = ['This', 'is', 'an', 'apple']
+a = "  "
+print(a.join(l))
+O/P:-This  is  an  apple
+
+*Range function :-
+n = range(5)
+print(n)   O/P:-range(0, 5)
+print(type(n)) O/P:- <class 'range'>
+n = list(range(3,8))
+print(n)   O/P:- [3, 4, 5, 6, 7]
+
+*For Loop:- A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+This is less like the for keyword in other programming languages, and works more like an iterator method as found in other object-orientated programming languages.
+With the for loop we can execute a set of statements, once for each item in a list, tuple, set etc.
+
+Q.  l = ["A", 'B', 'C', 'D']
+#                    i
+
+#  "D"in l
+for i in l:
+    print(i)  O/P:- A
+                    B
+                    C
+                    D
+
+Q2.  x = 'abcd'
+
+for i in x:
+    print(i.upper())
+ O/P:-              A
+                    B
+                    C
+                    D
+
+Q3. x = 'abcd'
+
+#          0,1,2,3
+for i in range(len(x)):
+    print(i)
+O/P:-0
+    1
+    2
+    3
+
+*Dictionary in Python:- Dictionaries are used to store data values in key:value pairs.
+A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+Dictionaries are written with curly brackets, and have keys and values:
+
+Q1. # key: value
+
+d = {"ravi": 24, "viky": 21, "roy": 36}
+
+print(d)
+print(type(d))
+O/P:- {'ravi': 24, 'viky': 21, 'roy': 36}
+      <class 'dict'>
+
+#To find the values in dictionary
+print(d['roy'])  o/p:-36
+
+Q2. color = {
+    "red": [255,0,0],
+    "green": [0,255,0],
+    "blue": [0,0,255]
+}
+print(color['red'])   O/P:-[255, 0, 0]
+
+*Dictionary Functions :-
+d = { 1:1, 2:4, 3:9, 4:16}
+print(len(d))   o/p:=4
+print(sum(d))  o/p:=10
+
+*Tuple :-  Tuples are used to store multiple items in a single variable.
+
+Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Set, and Dictionary, all with different qualities and usage.
+
+A tuple is a collection which is ordered and unchangeable.
+
+Tuples are written with round brackets.
+
+Q1.  
+t = (1,2,3,4)
+print(t)
+print(type(t))
+O/P:- (1, 2, 3, 4)
+     <class 'tuple'>
+
+Q2.
+t = (1,2,3,4,5)
+print(len(t))   O/P:- 5
+print(max(t))   O/P:-5
+
+*Tuple Methods:-
+t = (2,3,4,5,5,3,3,3,7)
+
+print(t.count(5))   O/P:-2
+
+
+*Sets in python :-  Sets are used to store multiple items in a single variable.
+Set is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Tuple, and Dictionary, all with different qualities and usage.
+A set is a collection which is unordered, unchangeable*, and unindexed.
+
+Q1.
+n = {1,2,3,4,5,6}
+print(n)
+print(type(n))
+o/p:-{1, 2, 3, 4, 5, 6}
+<class 'set'>
+
+Q2. 
+n = {1,2,3,44,55}
+
+for i in n:
+    print(i)
+O/P:-
+1
+2
+3
+55
+44
+
+Q3.
+f = {1,2,3,4,5,6}
+s = {4,5,6,7,8,9}
+
+print(f | s)
+O/P:-
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+*set functions
+s = {1,2,3,4}
+
+print(len(s))
+print(sum(s))
+print(max(s))
+print(min(s))
+O/P:- 
+4
+10
+4
+1
+
+*set methods
+Q1.
+# add
+
+n = {1,2,3,4}
+
+print(n)
+
+n.add(-7)
+
+print(n)
+O/P:-{1, 2, 3, 4}
+     {1, 2, 3, 4, -7}
+
+
+
+
 
