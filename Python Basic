@@ -52,3 +52,111 @@ o/p:-*
      **
      ***
 
+*While Loop in pyton :-  we can execute a set of statements as long as a condition is true.
+Q1.i = 1
+
+while i <= 5 :
+    print("Himanshu")
+    i = i + 1 
+O/P:- Himanshu
+      Himanshu
+      Himanshu
+      Himanshu
+      Himanshu
+Q2.i = 1
+
+while i <= 5 :
+    print(i)
+    i = i + 1
+o/p:- 1
+      2
+      3 
+      4
+      5
+Q3. i = 1
+
+while i <= 10:
+    print(i*i, end='  ')
+    i = i + 1
+o/p:- 1  4  9  16  25  36  49  64  81  100 
+
+Break Statement :- break statement we can stop the loop even if the while condition is true:
+Q1. i = 1
+while i < 6:
+  print(i)
+  if i == 3:
+    break
+  i += 1
+o/p:- 1
+      2
+      3
+Continue Statement :- continue statement we can stop the current iteration, and continue with the next:
+Q1. i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+o/p:- 
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+O/P:- 
+1
+2
+4
+5
+6
+
+*Write a program to enter a number from user and print sum of its individual digits:-
+ans:- n = int(input("Enter a Number: "))
+s = 0
+
+while n > 0:
+    r = n % 10
+    s = s + r     # s = 0, 3, 8, 9
+    n = n // 10
+
+print("Sum =", s)
+o/p:- Enter a Number: 2345
+      Sum = 14
+
+*Write a program to enter a number from user and check if it palindrome or not:-
+n = int(input("Enter a Number: "))
+s = 0
+
+while n > 0:
+    r = n % 10
+    s = s * 10 + r    # s = 0, 3, 35, 351
+    n = n // 10
+
+print(s)
+print(s * 2)
+O/P:-
+Enter a Number: 153
+351
+702
+
+*Write a program to enter a number from user and check if it is armstrong or not:-
+n = int(input("Enter a Number: "))
+t = n
+s = 0
+
+while n > 0:
+    r = n % 10
+    s = s + r*r*r
+    n = n // 10
+
+if s == t:
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+O/P:-
+Enter a Number: 371
+Armstrong Number
+
+
+
