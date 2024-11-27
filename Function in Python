@@ -1,1 +1,57 @@
+def myfunction():    # definition of function
+    print("Hey")
+myfunction()   O/P:- Hey 
 
+Q2.
+def paint():
+    print(1)
+    print(2)
+    print(3)
+
+paint()
+O/P:-
+1
+2
+3
+
+Q3.
+def add(x, y):
+    print(x + y)
+
+add(5,4)
+O/P:- 9
+
+*Return statement
+Q1.
+def play(x, y):
+    if x >= y:
+        return x
+    else:
+        return y
+
+print(play(4,7))
+O/P:-7
+
+* Default Argument
+Q1. 
+def say(msg, time = 1):
+    print(msg * time)
+
+say("Hello")
+o/p:- Hello
+
+Q2.
+x = 3                # global
+
+def add(x):          # local
+    x += 1           # x = x + 1
+    print(x)
+
+add(7)
+print(x)
+O/P:
+8
+3
+
+*Local variable :- 
+*Global variable :- 
