@@ -1,1 +1,238 @@
+* File Handling
+The key function for working with files in Python is the open() function.
+
+The open() function takes two parameters; filename, and mode.
+
+There are four different methods (modes) for opening a file:
+
+"r" - Read - Default value. Opens a file for reading, error if the file does not exist
+
+"a" - Append - Opens a file for appending, creates the file if it does not exist
+
+"w" - Write - Opens a file for writing, creates the file if it does not exist
+
+"x" - Create - Creates the specified file, returns an error if the file exists
+"t" - Text - Default value. Text mode
+
+"b" - Binary - Binary mode (e.g. images)
+
+EX:-f = open("student.txt")
+
+print(f)
+O/P:- <_io.TextIOWrapper name='student.txt' mode='r' encoding='UTF-8'>
+
+EX:- f = open("student.txt", 'r')
+
+print(f.read())   O/P:- this is a city file.
+print(type(f))   O/P:- <class '_io.TextIOWrapper'>
+print(type(f.read()))  O/P:- <class 'str'>
+f.close()    # to close the file
+
+*number of characters
+f = open("student.txt", 'r')
+
+print(f.read(5))    O/P:- this 
+
+EX:- f = open("student.txt", 'r')
+
+print(f.readlines())
+O/P:- ['this is a city file.\n', 'I m from India.']
+
+*Read a file
+f = open("student.txt")
+
+print(f)
+<_io.TextIOWrapper name='student.txt' mode='r' encoding='UTF-8'>
+
+*using a loop
+f = open("student.txt", 'r')
+
+for i in f:
+    print(i)
+
+f.close()
+O/P:- this is a city file.
+
+I m from India.
+
+*write a file
+f = open("mumbai.txt", 'w')
+
+f.write('This is a virus.')
+
+f.close()
+O/P:-This is a virus.
+
+***append a file
+edit a file
+
+f = open("queens.txt", 'a')
+
+f.write('\nThis is a virus.')
+
+f.close()
+
+*with statement
+EX: -  with open("queens.txt",'r') as p:
+    print(p.read())
+O/P:- spiderman is the new ironman
+This is a virus.
+
+
+*Operators :- 
+2 | Operators
+Arithmetic Operators
+Relational Operators
+Bitwise Operators
+Logical Operators
+Assignment Operators
+Compound Operators
+Membership Operators
+Identity Operators
+# Arithmetic Operators
+# + - * / % // **
+
+print(7 % 2)  # modulo
+1
+print(11 % 4)
+3
+print(7 // 2) # floor division
+3
+print(10 // 4)
+2
+print(3 ** 2) # exponents
+9
+print(7 ** 3)
+343
+# Relational Operators
+#  >, <, >= , <=, ==, !=
+
+print(10 > 5)
+True
+print(10 < 10)
+False
+print(10 >= 10)
+True
+print(10 == 10)
+True
+print(11 != 5)
+True
+# Boolean Operators
+
+True --- 1
+
+False --- 0
+# Logical Operator
+
+not
+and
+or
+print(not True)
+False
+print(not False)
+True
+print(not (10 == 10))
+False
+# and 
+# truth table
+
+0 and 0 = 0
+0 and 1 = 0
+1 and 0 = 0
+1 and 1 = 1
+print(False and True)
+False
+print(True and True)
+True
+# or 
+# truth table
+
+0 or 0 = 0
+0 or 1 = 1
+1 or 0 = 1
+1 or 1 = 1
+print(True or False)
+True
+print(True and False or not True and not False)
+#                         False         True
+#           False             False
+#False
+False
+# Assignment Operators
+ = 
+# Compound  Operators
++= , -=, *= , /=, %=, //= , **=
+a = 10
+
+a += 5  # a = a + 5
+
+print(a)
+15
+a = 10
+
+a += 1  # a = a + 1
+
+print(a)
+11
+a = 10
+
+a %= 4  # a = a % 4
+
+print(a)
+2
+a = 10
+
+a **= 2  # a = a ** 2
+
+print(a)
+100
+# membership operators
+in
+not in
+# identity operator
+is
+not is
+# Bitwise Operator
+& - bitwise and 
+| - bitwise or
+^ - bitwise xor
+<<   bitwise left shift
+>>   bitwise right shift
+bit
+number
+characters
+instruction
+program
+software
+1 byte - 8 bits
+2 bytes - 16 bits
+1kb - 1024 bytes
+1mb - 1024kb
+1gb - 1024mb
+    512    256    128    64    32    16    8    4    2    1
+#                                          1    0    1    1
+#                                               1    1    1
+#
+# and 
+# truth table
+
+0 & 0 = 0
+0 & 1 = 0
+1 & 0 = 0
+1 & 1 = 1
+print(8 & 2)
+
+#  1000
+#  0010
+#  0000
+0
+print(11 & 4)
+
+#  1011
+#  0100
+#  0000
+0
+111 - 7
+
+
 
