@@ -53,5 +53,94 @@ O/P:
 8
 3
 
-*Local variable :- 
-*Global variable :- 
+*Local variable :-A variable created inside a function belongs to the local scope of that function, and can only be used inside that function.
+ex :- def myfunc():
+  x = 300
+  print(x)
+
+myfunc()
+O/P:- 300
+*Global variable :- A variable created in the main body of the Python code is a global variable and belongs to the global scope.
+Ex :-  x = 300
+
+def myfunc():
+  print(x)
+
+myfunc()
+
+print(x)
+O/P:- 300
+300
+
+Doc string:- Python documentation strings (or docstrings) provide a convenient way of associating documentation with Python modules, functions, classes, and methods. It’s specified in source code that is used, like a comment, to document a specific segment of code. Unlike conventional source code comments, the docstring should describe what the function does, not how.
+
+Declaring Docstrings: The docstrings are declared using ”’triple single quotes”’ or “”” triple double quotes “”” just below the class, method, or function declaration. All functions should have a docstring.
+Accessing Docstrings: The docstrings can be accessed using the __doc__ method of the object or using the help function. The below examples demonstrate how to declare and access a docstring.
+
+Ex :- s = '''i am the 
+
+best'''
+
+print(s)
+print(type(s))
+O/P:-
+i am the 
+
+best
+<class 'str'>
+
+*Lambda function :- A lambda function is a small anonymous function.
+
+A lambda function can take any number of arguments, but can only have one expression.
+
+Syntax
+lambda arguments : expression
+
+Ex:- def cube(y):
+    return y * y * y
+
+g = lambda x: x * x * x
+print(cube(7))
+O/P:- 343
+
+*Filter function:- The filter() method filters the given sequence with the help of a function that tests each element in the sequence to be true or not. Let’s see a simple example of filter() function in python:
+Python filter() Syntax
+The filter() method in Python has the following syntax:
+
+Syntax: filter(function, sequence)
+
+
+Parameters:
+
+
+function: function that tests if each element of a sequence is true or not.
+sequence: sequence which needs to be filtered, it can be sets, lists, tuples, or containers of any iterators.
+Returns: an iterator that is already filtered.
+Ex:- n = [11,22,33,55,44]
+
+r = list(filter(lambda a: a%2 == 0 , n))
+
+print(r)
+O/P:- [22, 44]
+
+*map function :- The map() function is used to apply a given function to every item of an iterable, such as a list or tuple, and returns a map object (which is an iterator).
+def add(x):
+    return x + 5
+
+n = [1,2,3,4,5]
+
+r = list(map(add, n))
+#       6, 7
+print(r)
+
+O/P:-[6, 7, 8, 9, 10]
+
+EX:- def one():
+    """this function prints 10.
+    Also it prints 5
+    """
+    print(10)
+    print(5)
+one()
+O/P:- 10
+5
