@@ -1,1 +1,294 @@
+OOPS :- An object-oriented paradigm is to design the program using classes and objects. The object is related to real-word entities such as book, house, pencil, etc. The oops concept focuses on writing the reusable code. It is a widespread technique to solve the problem by creating objects.
+
+Major principles of object-oriented programming system are given below.
+
+Class
+Object
+Method
+Inheritance
+Polymorphism
+Data Abstraction
+Encapsulation
+
+* Inheritance
+Inheritance is the most important aspect of object-oriented programming, which simulates the real-world concept of inheritance. It specifies that the child object acquires all the properties and behaviors of the parent object.
+
+By using inheritance, we can create a class which uses all the properties and behavior of another class. The new class is known as a derived class or child class, and the one whose properties are acquired is known as a base class or parent class.
+
+It provides the re-usability of the code.
+
+*Polymorphisms :- Polymorphism
+Polymorphism contains two words "poly" and "morphs". Poly means many, and morph means shape. By polymorphism, we understand that one task can be performed in different ways. For example - you have a class animal, and all animals speak. But they speak differently. Here, the "speak" behavior is polymorphic in a sense and depends on the animal. So, the abstract "animal" concept does not actually "speak", but specific animals (like dogs and cats) have a concrete implementation of the action "speak".
+
+*Encapsulation : - Encapsulation is also an essential aspect of object-oriented programming. It is used to restrict access to methods and variables. In encapsulation, code and data are wrapped together within a single unit from being modified by accident.
+*Abstraction :- Data abstraction and encapsulation both are often used as synonyms. Both are nearly synonyms because data abstraction is achieved through encapsulation.
+Abstraction is used to hide internal details and show only functionalities. Abstracting something means to give names to things so that the name captures the core of what a function or a whole program does.
+
+*Class
+The class can be defined as a collection of objects. It is a logical entity that has some specific attributes and methods. For example: if you have an employee class, then it should contain an attribute and method, i.e. an email id, name, age, salary, etc.
+Ex : - class ClassName:     
+        <statement-1>     
+        .     
+        .      
+        <statement-N>     
+*Object :- The object is an entity that has state and behavior. It may be any real-world object like the mouse, keyboard, chair, table, pen, etc.
+
+Everything in Python is an object, and almost everything has attributes and methods. All functions have a built-in attribute __doc__, which returns the docstring defined in the function source code.
+
+When we define a class, it needs to create an object to allocate the memory. Consider the following example.
+Ex : - class car:  
+    def __init__(self,modelname, year):  
+        self.modelname = modelname  
+        self.year = year  
+    def display(self):  
+        print(self.modelname,self.year)  
+  
+c1 = car("Toyota", 2016)  
+c1.display()  
+O/P:- Toyota 2016
+
+*Constructor (Self-Parameter):-
+The self-parameter refers to the current instance of the class and accesses the class variables. We can use anything instead of self, but it must be the first parameter of any function which belongs to the class.
+*_ _init_ _ method :- In order to make an instance of a class in Python, a specific function called __init__ is called. Although it is used to set the object's attributes, it is often referred to as a constructor.
+The self-argument is the only one required by the __init__ method. This argument refers to the newly generated instance of the class. To initialise the values of each attribute associated with the objects, you can declare extra arguments in the __init__ method.
+Ex:- class Person:  
+    count = 0   # This is a class variable  
+  
+    def __init__(self, name, age):  
+        self.name = name    # This is an instance variable  
+        self.age = age  
+        Person.count += 1   # Accessing the class variable using the name of the class  
+person1 = Person("Ayan", 25)  
+person2 = Person("Bobby", 30)  
+print(Person.count)  
+O/P:- 2
+
+*Constructors can be of two types.
+
+Parameterized Constructor
+Non-parameterized Constructor
+
+1) Parameterized Constructor :- In Python, the method the __init__() simulates the constructor of the class. This method is called when the class is instantiated. It accepts the self-keyword as a first argument which allows accessing the attributes or method of the class.
+
+We can pass any number of arguments at the time of creating the class object, depending upon the __init__() definition. It is mostly used to initialize the clas
+
+EX:- class Employee:  
+    def __init__(self, name, id):  
+        self.id = id  
+        self.name = name  
+  
+    def display(self):  
+        print("ID: %d \nName: %s" % (self.id, self.name))  
+  
+  
+emp1 = Employee("John", 101)  
+emp2 = Employee("David", 102)  
+  
+# accessing display() method to print employee 1 information  
+  
+emp1.display()  
+  
+# accessing display() method to print employee 2 information  
+emp2.display()  
+O/P:-
+ID: 101
+Name: John
+ID: 102
+Name: David
+
+*Default Constructor :- 
+class Student:    
+    count = 0    
+    def __init__(self):    
+        Student.count = Student.count + 1    
+s1=Student()    
+s2=Student()    
+s3=Student()    
+print("The number of students:",Student.count)    
+O/P:-
+101 Joseph
+
+The built-in class attributes are given in the below table.
+
+SN
+Attribute
+Description
+1
+__dict__
+It provides the dictionary containing the information about the class namespace.
+2
+__doc__
+It contains a string which has the class documentation
+3
+__name__
+It is used to access the class name.
+4
+__module__
+It is used to access the module in which, this class is defined.
+5
+__bases__
+It contains a tuple including all base classes.
+
+*Python Inheritance:-
+*Single Inheritance :-
+Ex:-class Animal:  
+    def speak(self):  
+        print("Animal Speaking")  
+#child class Dog inherits the base class Animal  
+class Dog(Animal):  
+    def bark(self):  
+        print("dog barking")  
+d = Dog()  
+d.bark()  
+d.speak()  
+O/P:-dog barking
+Animal Speaking
+
+*Multi-Level inheritance:-
+class Animal:  
+    def speak(self):  
+        print("Animal Speaking")  
+#The child class Dog inherits the base class Animal  
+class Dog(Animal):  
+    def bark(self):  
+        print("dog barking")  
+#The child class Dogchild inherits another child class Dog  
+class DogChild(Dog):  
+    def eat(self):  
+        print("Eating bread...")  
+d = DogChild()  
+d.bark()  
+d.speak()  
+d.eat()  
+O/P:-
+dog barking
+Animal Speaking
+Eating bread...
+
+*Multiple inheritance :-
+EX:- 
+class Calculation1:  
+    def Summation(self,a,b):  
+        return a+b;  
+class Calculation2:  
+    def Multiplication(self,a,b):  
+        return a*b;  
+class Derived(Calculation1,Calculation2):  
+    def Divide(self,a,b):  
+        return a/b;  
+d = Derived()  
+print(d.Summation(10,20))  
+print(d.Multiplication(10,20))  
+print(d.Divide(10,20))  
+O/P:-
+30
+200
+0.5
+
+*Abstraction :-
+Ex:- # Python program demonstrate  
+# abstract base class work   
+from abc import ABC, abstractmethod   
+class Car(ABC):   
+    def mileage(self):   
+        pass  
+  
+class Tesla(Car):   
+    def mileage(self):   
+        print("The mileage is 30kmph")   
+class Suzuki(Car):   
+    def mileage(self):   
+        print("The mileage is 25kmph ")   
+class Duster(Car):   
+     def mileage(self):   
+          print("The mileage is 24kmph ")   
+  
+class Renault(Car):   
+    def mileage(self):   
+            print("The mileage is 27kmph ")   
+          
+# Driver code   
+t= Tesla ()   
+t.mileage()   
+  
+r = Renault()   
+r.mileage()   
+  
+s = Suzuki()   
+s.mileage()   
+d = Duster()   
+d.mileage()  
+O/P:- 
+The mileage is 30kmph
+The mileage is 27kmph
+The mileage is 25kmph
+The mileage is 24kmph
+
+**Method Overriding in Python
+In method overriding, a method defined inside a subclass has the same name as a method in its superclass but implements a different functionality.
+EX:- As an example of polymorphism given below, we have shape which is an abstract class. It is used as parent by two classes circle and rectangle. Both classes override parent's draw() method in different ways.
+Code :- from abc import ABC, abstractmethod
+class shape(ABC):
+   @abstractmethod
+   def draw(self):
+      "Abstract method"
+      return
+
+class circle(shape):
+   def draw(self):
+      super().draw()
+      print ("Draw a circle")
+      return
+
+class rectangle(shape):
+   def draw(self):
+      super().draw()
+      print ("Draw a rectangle")
+      return
+
+shapes = [circle(), rectangle()]
+for shp in shapes:
+   shp.draw()
+O/P:- Draw a circle
+Draw a rectangle
+
+*Method Overloading in Python
+Unlike other programming languages like Java, C++, and C#, Python does not support the feature of method overloading by default. However, there are alternative ways to achieve it.
+
+*Example
+If you define a method multiple times as shown in the below code, the last definition will override the previous ones. Therefore, this way of achieving method overloading in Python generates error.
+Code :- from multipledispatch import dispatch
+class example:
+   @dispatch(int, int)
+   def add(self, a, b):
+      x = a+b
+      return x
+   @dispatch(int, int, int)
+   def add(self, a, b, c):
+      x = a+b+c
+      return x
+
+obj = example()
+
+print (obj.add(10,20,30))
+print (obj.add(10,20))
+O/P:-60
+30
+
+*Encapsulation :- 
+*Code :- class Student:
+   def __init__(self, name="Rajaram", marks=50):
+      self.name = name
+      self.marks = marks
+
+s1 = Student()
+s2 = Student("Bharat", 25)
+
+print ("Name: {} marks: {}".format(s1.name, s2.marks))
+print ("Name: {} marks: {}".format(s2.name, s2.marks))
+O/P:- Name: Rajaram marks: 50
+Name: Bharat marks: 25
+
+
+
 
