@@ -1,0 +1,345 @@
+*Exceptional Handling :- 
+
+The try block lets you test a block of code for errors.
+
+The except block lets you handle the error.
+
+The else block lets you execute code when there is no error.
+
+The finally block lets you execute code, regardless of the result of the try- and except blocks.
+
+*runtime errors
+
+a = 0
+b = 1
+
+print(b/a)
+O/P:- runtime errors
+
+*EX:-
+try:
+    a = 7
+    b = 0
+    print(a/b)
+    print("Finish")
+except ZeroDivisionError:
+    print("An Error Occured")
+O/P:- An Error Occured
+
+EX:-
+try:
+    w = "String"
+    print(w/0)
+except:
+    print("Something went wrong!")
+O/P:- Something went wrong!
+
+*EX:- 
+try:
+    print("Hello")
+except:
+    print("Error")
+finally:
+    print("Finally Block")
+O/P:- Hello
+Finally Block
+
+*Raise exception
+print(1)
+raise ValueError
+print(2)
+O/P:-1
+
+*Assertion
+EX:- print(1)
+assert 2+2 == 4
+print(2)
+O/P:- 
+1
+2
+
+
+* RegEx, or Regular Expression, is a sequence of characters that forms a search pattern.
+
+RegEx can be used to check if a string contains the specified search pattern.
+
+RegEx Module
+Python has a built-in package called re, which can be used to work with Regular Expressions.
+
+EX:- 
+import re
+
+#Check if the string starts with "The" and ends with "Spain":
+
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+
+if x:
+  print("YES! We have a match!")
+else:
+  print("No match")
+O/P:--
+YES! We have a match!
+
+Regex functions :-
+findall	:-  Returns a list containing all matches
+search	:-  Returns a Match object if there is a match anywhere in the string
+split	:-  Returns a list where the string has been split at each match
+sub	 :-  Replaces one or many matches with a string
+
+The Match object has properties and methods used to retrieve information about the search, and the result:
+
+.span() returns a tuple containing the start-, and end positions of the match.
+.string returns the string passed into the function
+.group() returns the part of the string where there was a match
+
+EX:-
+import re
+
+p = "Indore"
+
+if re.match(p, "Indore is best"):
+    print("Match")
+else:
+    print("Not Match")
+O/P:- Match
+
+EX:-
+search
+import re
+
+pattern = 'india'
+
+if re.match(pattern, 'The india is the best.'):
+    print("Match")
+else:
+    print("No match")
+    
+if re.search(pattern, 'The india is the best'):
+    print("Search found")
+else:
+    print("Not found")
+O/P :- No match
+      Search found
+
+*findall
+print(re.findall(pattern, 'The india is the best'))
+O/P:- 
+['india']
+
+*group
+p = "goa"
+
+match = re.search(p, "The goa is the smallest state. goa")
+
+print(match)
+
+if match:
+    print(match.group())
+O/P:- <re.Match object; span=(4, 7), match='goa'>
+goa
+print(type(match))
+O/P:- <class 're.Match'>
+
+*start
+print(match.start())
+OP:- 4
+*end
+print(match.end())
+OP:- 7
+*span
+print(match.span())
+OP:- (4, 7)
+
+EX:-
+import re
+
+s = "His name is Virat, Hello Virat"
+
+p = 'virat'
+
+
+newstring = re.sub(p, "Rohit", s)
+
+print(newstring)
+OP:- His name is Virat, Hello Virat
+
+*meta characters
+dot
+import re
+
+p = 'gr.y'
+
+if re.match(p, "grey"):
+    print(1)
+
+if re.match(p, "gray"):
+    print(2)
+
+if re.match(p, "blue"):
+    print(3)
+OP:- 1
+      2
+
+* start (^)
+p = "^gr.y"
+
+if re.match(p, "gluy"):
+    print(1)
+if re.match(p, "gruy"):
+    print(2)
+if re.match(p, "grayt"):
+    print(3)
+OP:- 2
+     3
+*  end ($)
+p = "^gr.y$"
+
+if re.match(p, "gray"):
+    print(1)
+if re.match(p, "grey"):
+    print(2)
+if re.match(p, "grayt"):
+    print(3)
+if re.match(p, "gluy"):
+    print(4)
+OP:- 1
+     2
+
+*character classes
+import re
+
+p = "[aeiou]"
+
+if re.search(p, "grey"):
+    print(1)
+    
+if re.search(p, "qwrtyp"):
+    print(2)
+
+if re.search(p, "rythums"):
+    print(3)
+OP:- 1
+     3
+
+*Module :-A file containing a set of functions you want to include in your application.
+*Now we can use the module we just created, by using the import statement:
+
+Example
+Import the module named mymodule, and call the greeting function:
+
+import mymodule
+
+mymodule.greeting("Jonathan")
+OP:-Hello, Jonathan
+
+*Re-naming a Module
+You can create an alias when you import a module, by using the as keyword:
+
+Example
+Create an alias for mymodule called mx:
+
+import mymodule as mx
+
+a = mx.person1["age"]
+print(a)
+OP:-36
+
+*Using the dir() Function
+There is a built-in function to list all the function names (or variable names) in a module. The dir() function:
+
+Example
+List all the defined names belonging to the platform module:
+
+import platform
+
+x = dir(platform)
+print(x)
+:OP:-['DEV_NULL', '_UNIXCONFDIR', 'WIN32_CLIENT_RELEASES', 'WIN32_SERVER_RELEASES', '__builtins__', '__cached__', '__copyright__', '__doc__', '__file__', '__loader__', '__name__', '__package __', '__spec__', '__version__', '_default_architecture', '_dist_try_harder', '_follow_symlinks', '_ironpython26_sys_version_parser', '_ironpython_sys_version_parser', '_java_getprop', '_libc_search', '_linux_distribution', '_lsb_release_version', '_mac_ver_xml', '_node', '_norm_version', '_perse_release_file', '_platform', '_platform_cache', '_pypy_sys_version_parser', '_release_filename', '_release_version', '_supported_dists', '_sys_version', '_sys_version_cache', '_sys_version_parser', '_syscmd_file', '_syscmd_uname', '_syscmd_ver', '_uname_cache', '_ver_output', 'architecture', 'collections', 'dist', 'java_ver', 'libc_ver', 'linux_distribution', 'mac_ver', 'machine', 'node', 'os', 'platform', 'popen', 'processor', 'python_branch', 'python_build', 'python_compiler', 'python_implementation', 'python_revision', 'python_version', 'python_version_tuple', 're', 'release', 'subprocess', 'sys', 'system', 'system_aliases', 'uname', 'uname_result', 'version', 'warnings', 'win32_ver']
+
+*JSON :- JSON is a syntax for storing and exchanging data.
+
+JSON is text, written with JavaScript object notation.
+
+EX:-
+import json
+
+# some JSON:
+x = '{ "name":"John", "age":30, "city":"New York"}'
+
+# parse x:
+y = json.loads(x)
+
+# the result is a Python dictionary:
+print(y["age"])
+
+OP:-30
+**Convert from Python to JSON
+If you have a Python object, you can convert it into a JSON string by using the json.dumps() method.
+
+Example
+Convert from Python to JSON:
+
+import json
+
+# a Python object (dict):
+x = {
+  "name": "John",
+  "age": 30,
+  "city": "New York"
+}
+
+# convert into JSON:
+y = json.dumps(x)
+
+# the result is a JSON string:
+print(y)
+OP:- {"name": "John", "age": 30, "city": "New York"}
+
+*To parse the JSON
+EX :-
+import json
+
+x = {
+  "name": "John",
+  "age": 30,
+  "married": True,
+  "divorced": False,
+  "children": ("Ann","Billy"),
+  "pets": None,
+  "cars": [
+    {"model": "BMW 230", "mpg": 27.5},
+    {"model": "Ford Edge", "mpg": 24.1}
+  ]
+}
+
+# use four indents to make it easier to read the result:
+print(json.dumps(x, indent=4))
+OP:- 
+{
+    "name": "John",
+    "age": 30,
+    "married": true,
+    "divorced": false,
+    "children": [
+        "Ann",
+        "Billy"
+    ],
+    "pets": null,
+    "cars": [
+        {
+            "model": "BMW 230",
+            "mpg": 27.5
+        },
+        {
+            "model": "Ford Edge",
+            "mpg": 24.1
+        }
+    ]
+}
+
+
+
+
+
+
