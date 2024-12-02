@@ -20,3 +20,200 @@ This behavior is called locality of reference in computer science.
 
 This is the main reason why NumPy is faster than lists. Also it is optimized to work with latest CPU architectures.
 
+Numeric Python
+
+1 | Creating a vector
+import numpy as np
+!pip install numpy
+Requirement already satisfied: numpy in c:\users\himan\anaconda3\lib\site-packages (1.21.5)
+vector = np.array([1,2,3])
+
+print(vector)
+print(type(vector))
+[1 2 3]
+<class 'numpy.ndarray'>
+#help(np.ndarray)
+vector = np.array([[1],[2],[3]])
+
+print(vector)
+[[1]
+ [2]
+ [3]]
+2 | Create a matrix
+vector = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(vector)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+3 | selecting elements
+vector
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+v = np.array([1,2,3,4,5,6,7])
+
+print(v[:])
+[1 2 3 4 5 6 7]
+print(v[3:7])
+[4 5 6 7]
+vector = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(vector)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+print(vector[0,0])
+1
+print(vector[2,2])
+9
+print(vector[0:2,1:2])
+[[2]
+ [5]]
+print(vector[0:2,0:2])
+[[1 2]
+ [4 5]]
+4 | Describing a Matrix
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+matrix
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+matrix.shape  #(row, column)
+(3, 3)
+matrix.size
+9
+matrix.ndim   # number of dimensions
+2
+5 | Max and Min functions
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+print(np.max(matrix))
+9
+print(np.min(matrix))
+1
+print(np.max(matrix, axis = 0))   #column
+[7 8 9]
+print(np.max(matrix, axis = 1))   #row
+[3 6 9]
+6 | Mean, Variance and Standard Deviation
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+print(np.mean(matrix))
+5.0
+print(np.var(matrix))
+6.666666666666667
+print(np.std(matrix))
+2.581988897471611
+7 | Reshaping arrays
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+print(matrix.reshape(9,1))
+[[1]
+ [2]
+ [3]
+ [4]
+ [5]
+ [6]
+ [7]
+ [8]
+ [9]]
+print(matrix.reshape(9,2))
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Input In [33], in <cell line: 1>()
+----> 1 print(matrix.reshape(9,2))
+
+ValueError: cannot reshape array of size 9 into shape (9,2)
+print(matrix.reshape(9))  ## it will create 1-d array
+[1 2 3 4 5 6 7 8 9]
+print(matrix.reshape(1,-1))
+[[1 2 3 4 5 6 7 8 9]]
+print(matrix.flatten())
+[1 2 3 4 5 6 7 8 9]
+8 | Transpose of a matrix
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+print(matrix.T)
+[[1 4 7]
+ [2 5 8]
+ [3 6 9]]
+matrix
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+9 | Diagonal
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+print(matrix.diagonal())
+[1 5 9]
+print(matrix.diagonal(offset = 1))
+[2 6]
+print(matrix.diagonal(offset = 2))
+[3]
+print(matrix.diagonal(offset = -1))
+[4 8]
+10 | Trace
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix)
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+print(matrix.trace())
+15
+11 | Dot Product
+matrix1 = np.array([[1,2,3],[4,5,6],[7,8,9]])
+matrix2 = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(matrix1)
+print(matrix2)
+
+print(np.dot(matrix1, matrix2))
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[ 30  36  42]
+ [ 66  81  96]
+ [102 126 150]]
+print(matrix1 @ matrix2)
+[[ 30  36  42]
+ [ 66  81  96]
+ [102 126 150]]
+print(matrix1 * matrix2)
+[[ 1  4  9]
+ [16 25 36]
+ [49 64 81]]
+12 | Random Values
+print(np.random.randint(0,11,3))
+[5 5 6]
+ 
+
