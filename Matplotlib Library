@@ -1,0 +1,165 @@
+What is Matplotlib?
+Matplotlib is a low level graph plotting library in python that serves as a visualization utility.
+
+Matplotlib was created by John D. Hunter.
+
+Matplotlib is open source and we can use it freely.
+
+Matplotlib is mostly written in python, a few segments are written in C, Objective-C and Javascript for Platform compatibility.
+
+
+Matplotlib
+import matplotlib.pyplot as plt
+x = [1,2,3,4,5,6,7]
+y = [50,51,52,48,47,49,46]
+plt.xlabel("Day")
+Text(0.5, 0, 'Day')
+
+plt.ylabel("Temperature")
+Text(0, 0.5, 'Temperature')
+
+plt.title("Weather")
+Text(0.5, 1.0, 'Weather')
+
+plt.plot(x,y)
+[<matplotlib.lines.Line2D at 0x24b073ef640>]
+
+# help(plt.plot)
+plt.plot(x,y, color='red', linewidth = 2)
+[<matplotlib.lines.Line2D at 0x24b07086310>]
+
+plt.plot(x,y,color='red', linewidth=2, linestyle='dotted')
+[<matplotlib.lines.Line2D at 0x24b07539c40>]
+
+plt.xlabel("Day")
+plt.ylabel("Temperature")
+plt.title("Weather")
+plt.plot(x,y, color='green', linewidth=5, linestyle='dashed')
+[<matplotlib.lines.Line2D at 0x24b07033f70>]
+
+format strings
+plt.xlabel("Day")
+plt.ylabel("Temperature")
+plt.title("Weather")
+plt.plot(x,y, 'r+--')
+[<matplotlib.lines.Line2D at 0x24b074c47f0>]
+
+plt.xlabel("Day")
+plt.ylabel("Temperature")
+plt.title("Weather")
+plt.plot(x,y, color='blue', marker='*', linestyle='--')
+[<matplotlib.lines.Line2D at 0x24b071c4640>]
+
+plt.xlabel("Day")
+plt.ylabel("Temperature")
+plt.title("Weather")
+plt.plot(x,y, color='blue', marker='^', linestyle='', markersize=10)
+[<matplotlib.lines.Line2D at 0x24b0709e220>]
+
+plt.xlabel("Day")
+plt.ylabel("Temperature")
+plt.title("Weather")
+plt.plot(x,y, "g<", alpha=0.3)     # rgba
+[<matplotlib.lines.Line2D at 0x24b08d47ac0>]
+
+label parameter
+days = [1,2,3,4,5,6,7]
+max_t = [50,51,52,48,47,49,46]
+min_t = [43,42,40,44,33,35,37]
+avg_t = [45,48,48,46,40,42,41]
+plt.plot(days, max_t, label='max')
+plt.plot(days, min_t, label='min')
+plt.plot(days, avg_t, label='average')
+[<matplotlib.lines.Line2D at 0x24b08edac40>]
+
+legend
+plt.plot(days, max_t, label='max')
+plt.plot(days, min_t, label='min')
+plt.plot(days, avg_t, label='average')
+
+plt.legend(loc='best')
+<matplotlib.legend.Legend at 0x24b08f045b0>
+
+plt.plot(days, max_t, label='max')
+plt.plot(days, min_t, label='min')
+plt.plot(days, avg_t, label='average')
+
+plt.legend(loc='upper right', shadow=True, fontsize='large')
+<matplotlib.legend.Legend at 0x24b08f36730>
+
+Bar chart
+import numpy as np
+company = ['Google', 'Amazon', 'MS', 'Facebook']
+revenue = [90, 136, 89, 27]
+xpos = np.arange(len(company))
+xpos
+array([0, 1, 2, 3])
+plt.bar(xpos, revenue, label="Revenue")
+plt.ylabel("Revenue in Bln")
+plt.title("Technology Stocks")
+plt.legend()
+<matplotlib.legend.Legend at 0x24b08fa9040>
+
+plt.bar(xpos, revenue, label="Revenue")
+
+plt.xticks(xpos, company)
+
+plt.ylabel("Revenue in Bln")
+plt.title("Technology Stocks")
+plt.legend()
+<matplotlib.legend.Legend at 0x24b090d3880>
+
+profit = [40,2,34,12]
+plt.bar(xpos-0.2, revenue, label="Revenue")
+plt.bar(xpos+0.2, profit, label="Profit")
+
+plt.xticks(xpos, company)
+
+plt.ylabel("Revenue in Bln")
+plt.title("Technology Stocks")
+plt.legend()
+<matplotlib.legend.Legend at 0x24b090b2730>
+
+plt.bar(xpos-0.2, revenue, width=0.4 ,label="Revenue")
+plt.bar(xpos+0.2, profit, width=0.4 ,label="Profit")
+
+plt.xticks(xpos, company)
+
+plt.ylabel("Revenue in Bln")
+plt.title("Technology Stocks")
+plt.legend()
+<matplotlib.legend.Legend at 0x24b0915b0a0>
+
+Pie Chart
+value = [1400, 600, 300, 410, 250]
+label = ["Home Rent", "Food", "Internet", "Car", "Other"]
+plt.pie(value, labels=label)
+([<matplotlib.patches.Wedge at 0x24b0922c3d0>,
+  <matplotlib.patches.Wedge at 0x24b0922c850>,
+  <matplotlib.patches.Wedge at 0x24b091e9f70>,
+  <matplotlib.patches.Wedge at 0x24b0922cfd0>,
+  <matplotlib.patches.Wedge at 0x24b0923c4f0>],
+ [Text(0.09328656407206024, 1.0960372333838069, 'Home Rent'),
+  Text(-0.9822184890776084, -0.4952240298229684, 'Food'),
+  Text(-0.16284704617934698, -1.0878790555712807, 'Internet'),
+  Text(0.6256100334857941, -0.9047718419590123, 'Car'),
+  Text(1.0615045230766318, -0.28845822485734873, 'Other')])
+
+plt.pie(value, labels=label, radius=1.5, autopct = '%1.2f%%')
+([<matplotlib.patches.Wedge at 0x24b0928b070>,
+  <matplotlib.patches.Wedge at 0x24b0928b790>,
+  <matplotlib.patches.Wedge at 0x24b0928bee0>,
+  <matplotlib.patches.Wedge at 0x24b0929a640>,
+  <matplotlib.patches.Wedge at 0x24b0929ad60>],
+ [Text(0.13992984610809037, 1.6440558500757103, 'Home Rent'),
+  Text(-1.4733277336164126, -0.7428360447344526, 'Food'),
+  Text(-0.2442705692690205, -1.6318185833569212, 'Internet'),
+  Text(0.9384150502286911, -1.3571577629385183, 'Car'),
+  Text(1.5922567846149476, -0.43268733728602315, 'Other')],
+ [Text(0.07632537060441291, 0.8967577364049328, '47.30%'),
+  Text(-0.8036333092453158, -0.40518329712788315, '20.27%'),
+  Text(-0.1332384923285566, -0.8900828636492296, '10.14%'),
+  Text(0.511862754670195, -0.7402678706937371, '13.85%'),
+  Text(0.8685037006990621, -0.2360112748832853, '8.45%')])
+
+ 
